@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURPRESA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #FFD6E5, #FFC2E5); /* Gradiente rosa */
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+            padding: 50px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            color: #FF007F; /* Rosa forte */
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+        .button {
+            padding: 15px 32px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .button:hover {
+            transform: scale(1.05);
+        }
+        #yesBtn {
+            background-color: #FF007F; /* Rosa forte */
+        }
+        #yesBtn:hover {
+            background-color: #D6006D; /* Rosa mais escuro */
+        }
+        #noBtn {
+            background-color: #FF4136; /* Vermelho */
+            position: absolute;
+        }
+        #noBtn:hover {
+            background-color: #D60000; /* Vermelho mais escuro */
+        }
+        #romanticImage {
+            display: none; /* Inicialmente oculta */
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .attributes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .show {
+            opacity: 1;
+        }
+        .advantages {
+            display: none; /* Inicialmente oculta */
+            margin-top: 20px;
+            font-size: 18px;
+            color: #FF007F; /* Rosa forte */
+        }
+        .show-advantages {
+            display: block;
+        }
+    </style>
+    <script>
+        function showAlert() {
+            
+            document.getElementById('romanticMusic').play();
+            document.getElementById('romanticImage').style.display = 'block'; // Mostra a imagem
+            document.getElementById('attributes').classList.add('show');
+            document.getElementById('advantages').classList.add('show-advantages'); // Mostra a mensagem
+
+            // Oculta os botões
+            document.getElementById('yesBtn').style.display = 'none';
+            document.getElementById('noBtn').style.display = 'none';
+        }
+
+        function moveButton() {
+            const button = document.getElementById('noBtn');
+            const container = document.querySelector('.container');
+            const containerRect = container.getBoundingClientRect();
+            const maxX = containerRect.width - button.offsetWidth;
+            const maxY = containerRect.height - button.offsetHeight;
+            const newX = Math.random() * maxX;
+            const newY = Math.random() * maxY;
+            button.style.left = newX + 'px';
+            button.style.top = newY + 'px';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>PARABENS</h1>
+        <p>Que você tenha um dia maravilhoso e aproveite bem esse grande dia da sua vida!
+            Ps: escolha com sabedoria!
+        </p>
+        <button id="yesBtn" class="button" onclick="showAlert()">sair comigo</button>
+        <button id="noBtn" class="button" onmouseover="moveButton()">receber presente</button>
+        <img id="romanticImage" src="C:\Users\Jackson lima.Jackson\Downloads\441540895_458499390048712_6948475345157856769_n.jpg" alt="Imagem Romântica" style="margin: 0 auto;">
+        <audio id="romanticMusic" src="C:\Users\Jackson lima.Jackson\Downloads\George Michael - Careless Whisper (Official Video) (320).mp3"></audio>
+        <div id="attributes" class="attributes">
+            <div>
+                <span>CARINHOSO</span>
+                <span id="attr1">89%</span>
+            </div>
+            <div>
+                <span>ENGRAÇADO:</span>
+                <span id="attr2">78%</span>
+            </div>
+            <div>
+                <span>INTELIGENTE:</span>
+                <span id="attr3">100%</span>
+            </div>
+            <div>
+                <span>ROMANTICO</span>:</span>
+                <span id="attr2">174%</span>
+            </div>
+        </div>
+        <div id="advantages" class="advantages">
+            <p>Fico muito feliz que você preferiu sair comigo, ao inves de receber um presente incrivel
+                Vantagens de sair comigo!</p
+            <ul>
+                <li>Sou muito divertido.🤡</li>
+                <li>vou te da comidas gostosas😋</li>
+                <li>vou rir das tuas piadas sem graça🤣</li>
+                <li>vou pegar na sua bunda😏</li>
+                <li>vou te leva pra conhecer lugares incriveis🤩</li>
+                <li>te contarei varias piadas pra você rir🤪</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
